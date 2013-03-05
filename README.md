@@ -10,6 +10,20 @@ How to use
 1. Replace the script.sh file in "Show Package Contents" Contents/Resources/Scripts with the script you want run
 2. There is no step 2
 
+Making git binary friendly
+==========================
+
+Because AppleScript stores its code in a binary format, it is difficult to use with version control. The included `.gitconfig` can be added to your .git/config to allow text conversion before diffing. It complements the included .gitattributes file
+
+Add it to your .git/config like so:
+
+    cat .gitconfig >> .git/config
+
+Alternatively, you can use a git 1.7.10+ style include by adding these lines to your .git/config
+
+    [include]
+        path = .gitconfig
+
 Sample scripts
 ==============
 
