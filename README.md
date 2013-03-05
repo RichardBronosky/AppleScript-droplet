@@ -10,6 +10,23 @@ How to use
 1. Replace the script.sh file in "Show Package Contents" Contents/Resources/Scripts with the script you want run
 2. There is no step 2
 
+How to edit
+===========
+
+The only "drag-and-droppable" save option for AppleScript is "File Format: Application". This has the side effect of **not allowing** you to right click the app in Finder and choose "Open with...". To edit, you have to either drag this app on top of the AppleScript Editor app, or from the command line do:
+
+    open -b com.apple.ScriptEditor2 AppleScript-droplet.app
+
+Editing the AppleScript will allow you to change 3 options:
+
+    ## Set use_terminal to true to run the script in a terminal
+    set use_terminal to true
+    ## Set exit_terminal to true to leave the terminal session open after script runs
+    set exit_terminal to true
+    ## Set log_file to a file path to have the output captured
+    set log_file to "/tmp/droplet.log"
+
+
 Making git binary friendly
 ==========================
 
