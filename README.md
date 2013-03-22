@@ -15,7 +15,7 @@ How to edit
 
 The only "drag-and-droppable" save option for AppleScript is "File Format: Application". This has the side effect of **not allowing** you to right click the app in Finder and choose "Open with...". To edit, you have to either drag this app on top of the AppleScript Editor app, or from the command line do:
 
-    open -b com.apple.ScriptEditor2 AppleScript-droplet.app
+    open -b com.apple.ScriptEditor2 script2droplet-droplet.app
 
 Editing the AppleScript will allow you to change 3 options:
 
@@ -49,12 +49,16 @@ file.sh
 Just uses the BSD command "file" to return info about each of the dropped files.
 A copy of this is used as the default script.sh in AppleScript-droplet.app/Contents/Resources/Scripts/
 
-dropbox.sh
+script2droplet.sh
+-----------------
+This is a script that, when placed in a droplet, will create a droplet from the dragged script. Yo dawg!
+
+[dropbox.sh](http://i.imgur.com/QA2GQdR.png)
 ----------
 Uploads each of the dropped files to a configurable folder in Dropbox and returns (and copies) the public URL (assuming you have configured it to use a public folder).
 Requires [Dropbox-Uploader] be installed and configured in advance.
 
-imgur.sh
+[imgur.sh](http://i.imgur.com/LmUvWqB.png)
 --------
 Uploads each of the dropped files to imgur and returns (and copies) the public URL.
 Currently these are anonymous. (patches welcome)
