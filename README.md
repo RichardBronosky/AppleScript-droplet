@@ -7,7 +7,15 @@ A template for creating Droplets for Mac OS X that will pass dropped files to an
 How to use
 ==========
 
-1. Replace the script.sh file in "Show Package Contents" Contents/Resources/Scripts with the script you want run
+'Inception' method
+------------------
+1. Drop an executable script or binary onto the "script2droplet-droplet" icon in Finder
+2. There is no step 2
+
+Manual method
+-------------
+
+1. Replace the `main` file in "Show Package Contents" Contents/Resources/Scripts with the script you want run
 2. There is no step 2
 
 How to edit
@@ -21,7 +29,7 @@ Editing the AppleScript will allow you to change 3 options:
 
     ## Set use_terminal to true to run the script in a terminal
     set use_terminal to true
-    ## Set exit_terminal to true to leave the terminal session open after script runs
+    ## Set exit_terminal to false to leave the terminal session open after script runs
     set exit_terminal to true
     ## Set log_file to a file path to have the output captured
     set log_file to "/tmp/droplet.log"
@@ -39,7 +47,7 @@ Add it to your .git/config like so:
 Alternatively, you can use a git 1.7.10+ style include by adding these lines to your .git/config
 
     [include]
-        path = .gitconfig
+        path = ../.gitconfig
 
 Sample scripts
 ==============
@@ -47,11 +55,11 @@ Sample scripts
 file.sh
 -------
 Just uses the BSD command "file" to return info about each of the dropped files.
-A copy of this is used as the default script.sh in AppleScript-droplet.app/Contents/Resources/Scripts/
 
 script2droplet.sh
 -----------------
 This is a script that, when placed in a droplet, will create a droplet from the dragged script. Yo dawg!
+A copy of this is used as the default `main` in `AppleScript-droplet.app/Contents/Resources/Scripts/`
 
 [dropbox.sh](http://i.imgur.com/QA2GQdR.png)
 ----------
@@ -71,13 +79,13 @@ Dropbox
 Create a new Dropbox Droplet like so:
 
     cp -r AppleScript-droplet.app Dropbox-droplet.app
-    cp scripts/dropbox.sh Dropbox-droplet.app/Contents/Resources/Scripts/script.sh
+    cp scripts/dropbox.sh Dropbox-droplet.app/Contents/Resources/Scripts/main
 
 Imgur
 -----
 Create a new Imgur Droplet like so:
 
     cp -r AppleScript-droplet.app Imgur-droplet.app
-    cp scripts/imgur.sh Imgur-droplet.app/Contents/Resources/Scripts/script.sh
+    cp scripts/imgur.sh Imgur-droplet.app/Contents/Resources/Scripts/main
 
 [Dropbox-Uploader]: https://github.com/andreafabrizi/Dropbox-Uploader

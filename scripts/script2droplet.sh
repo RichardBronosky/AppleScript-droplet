@@ -10,5 +10,5 @@ cd $(dirname $0)/../../..
 for script in "${@}"; do
     base="$(basename $script .sh)"
     cp -r $PWD ../${base}-droplet.app
-    cp $script ../${base}-droplet.app/Contents/Resources/Scripts/script.sh 
+    cp $script ../${base}-droplet.app/Contents/Resources/Scripts/main
 done
